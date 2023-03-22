@@ -1,101 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calc</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Calc</title>
 
-    <link rel="stylesheet" href="Style/style.css">
-
-
-    <!--fontawsomeness-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
-        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <!-- Boot strap-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script defer src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
-        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
-        crossorigin="anonymous"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
-        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
-        crossorigin="anonymous"></script>
-
-    <script src="JavaScript/Refrences.js" defer></script>
-    <script src="JavaScript/ManageFom.js" defer></script>
-</head>
-
-<body>
+        <link rel="stylesheet" href="Style/style.css">
 
 
-    <div class="login" id="loginForm">
-        <h1 class="text-center">
-            Login Here!
-        </h1>
-        <form class="needs-validation">
-            <div class="form-group was-validated">
-                <label class="form-label" for="e-mail">Enter Emaiil</label>
-                <input class="form-control" type="email" name="email" id="e-mail" required>
-                <div class="invalid-feedback">Please Enter Your Email</div>
+        <script
+        src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"
+        defer></script>
+
+        <!--fontawsomeness-->
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+            integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+        <!-- Boot strap-->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+            crossorigin="anonymous">
+        <script defer
+            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+            integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+            crossorigin="anonymous"></script>
+        <script defer
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+            integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+            crossorigin="anonymous"></script>
+
+        <!--jQuary-->
+      
+        <!--local Scripts-->
+        <script src="JavaScript/Refrences.js" defer></script>
+        <script src="JavaScript/ManageFom.js" defer></script>
+        <script src="JavaSCript/Database.js" defer></script>
+    </head>
+
+    <body>
+
+
+        <div class="login" id="loginForm">
+            <h1 class="text-center">
+                Login Here!
+            </h1>
+            <form class="needs-validation" novalidate>
+                <div class="form-group ">
+                    <label class="form-label" for="login-email">Enter Email or Username</label>
+                    <input class="form-control" type="text" name="text"
+                        id="login-email" required>
+                    <div class="invalid-feedback">Please Enter email or username</div>
+                </div>
+                <div class="form-group ">
+                    <label class="form-label" for="login-password">Enter
+                        Password</label>
+                    <input class="form-control" type="password" name="password"
+                        id="login-password" required>
+                    <div class="invalid-feedback">Please Enter your Password</div>
+                </div>
+                <div class="form-group form-check">
+                    <input class="form-check-input" type="checkbox" id="check">
+                    <label class="form-check-label" for="check">Remember me</label>
+                </div>
+                <input class="btn btn-success w-100" type="submit" value="LOGIN"
+                    id="login-submit">
+            </form>
+            <a id="login-change" class="underLink mt-5" style="cursor:
+                pointer;">Don't Have an Account</a>
+        </div>
+
+
+        <div class="SingnIn hide" id="signIN">
+            <h1 class="text-center">
+                SignIn Here!
+            </h1>
+            <form class="needs-validation" novalidate>
+                <div class="form-group">
+                    <label class="form-label" for="username">Enter Name</label>
+                    <input class="form-control" type="text" name="username"
+                        id="username" required>
+                    <div class="invalid-feedback">Please Enter Your username</div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="signin-email">Enter Email</label>
+                    <input class="form-control" type="email" name="email"
+                        id="signin-email" required>
+                    <div class="invalid-feedback">Please Enter Your Email</div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="signin-password">Enter
+                        Password</label>
+                    <input class="form-control" type="password" name="password"
+                        id="signin-password" required>
+                    <div class="invalid-feedback">Please Enter your Password</div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="signin-password2">Enter
+                        Password
+                        again</label>
+                    <input class="form-control" type="password" name="password2"
+                        id="signin-password2" required>
+                    <div class="invalid-feedback">Please Enter your Password
+                        again</div>
+                </div>
+                <div class="form-group d-flex ml-5">
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" id="radio1"
+                            name="gender" value="Male">
+                        <label class="form-check-label" for="radio1">Male</label>
+                    </div>
+                    <div class="form-check" style="margin-left: 10px;">
+                        <input type="radio" class="form-check-input" id="radio2"
+                            name="gender" value="Female">
+                        <label class="form-check-label" for="radio2">Female</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="bd-date">Enter Birthday date</label>
+                    <input class="form-control" type="date" name="bd-date"
+                        id="bd-date" required>
+                    <div class="invalid-feedback">Please Enter your birth date</div>
+                </div>
+                <input class="btn btn-success w-100" type="submit"
+                    id="signup-submit" value="SIGN IN">
+            </form>
+            <a id="sign-change" class="underLink mt-5" style="cursor:
+                pointer;">Already have an account</a>
+        </div>
+
+
+
+
+        <!--toast-->
+        <div class="toast-container" style="position: absolute; top: 10px; right: 10px;">
+
+            <div class="toast text-white bg-danger border-0 top-0 end-0"
+                 role="alert" aria-live="assertive"
+                aria-atomic="true" id="myToast" >
+                <div class="d-flex">
+                    <div class="toast-body">
+                        Please Enter Data Properly
+                    </div>
+                    <button type="button" class="btn-close btn-close-white me-2
+                        m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
             </div>
-            <div class="form-group was-validated">
-                <label class="form-label" for="password">Enter Password</label>
-                <input class="form-control" type="password" name="password" id="password" required>
-                <div class="invalid-feedback">Please Enter your Password</div>
-            </div>
-            <div class="form-group form-check was-validated">
-                <input class="form-check-input" type="checkbox" id="check">
-                <label class="form-check-label" for="check">Remember me</label>
-            </div>
-            <input class="btn btn-success w-100" type="submit" value="LOGIN">
-        </form>
-        <a onclick="ChnageForm(false)" class="underLink mt-5" style="cursor: pointer;">Don't Have an Account</a>
-    </div>
-
-
-    <div class="SingnIn" id="signIN">
-        <h1 class="text-center">
-            SignIn Here!
-        </h1>
-        <form class="needs-validation">
-            <div class="form-group was-validated">
-                <label class="form-label" for="username">Enter Name</label>
-                <input class="form-control" type="text" name="username" id="username" required>
-                <div class="invalid-feedback">Please Enter Your username</div>
-            </div>
-            <div class="form-group was-validated">
-                <label class="form-label" for="e-mail">Enter Emaiil</label>
-                <input class="form-control" type="email" name="email" id="e-mail" required>
-                <div class="invalid-feedback">Please Enter Your Email</div>
-            </div>
-            <div class="form-group was-validated">
-                <label class="form-label" for="password">Enter Password</label>
-                <input class="form-control" type="password" name="password" id="password" required>
-                <div class="invalid-feedback">Please Enter your Password</div>
-            </div>
-            <div class="form-group was-validated">
-                <label class="form-label" for="password2">Enter Password again</label>
-                <input class="form-control" type="password" name="password2" id="password2" required>
-                <div class="invalid-feedback">Please Enter your Password again</div>
-            </div>
-            <div class="form-group d-flex ml-5">
-                <div class="form-check">
-                    <input type="radio" class="form-check-input" id="radio1" name="optradio" value="Male">
-                    <label class="form-check-label" for="radio1">Male</label>
-                  </div>
-                  <div class="form-check" style="margin-left: 10px;">
-                    <input type="radio" class="form-check-input" id="radio2" name="optradio" value="Female">
-                    <label class="form-check-label" for="radio2">Female</label>
-                  </div>
-            </div>
-            <input class="btn btn-success w-100" type="submit" value="SIGN IN">
-        </form>
-        <a onclick="ChnageForm(true)" class="underLink mt-5" style="cursor: pointer;">already have an account</a>
-    </div>
-</body>
+        </div>
+    </body>
 
 </html>
