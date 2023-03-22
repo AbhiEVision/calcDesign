@@ -26,12 +26,13 @@ function SetDataInSessionStorage(data){
 }
 
 function ValidateUser(data){
-    const users = GetDataFromStorage();
+    const users = GetDataFromStorage() == undefined ? [] : GetDataFromStorage();
     for(let i=0,len =users.length; i<len; i++){
         if(users[i].username == data.id || users[i].email == data.id && users[i].password == data.Password){
             return true;
         }
     }
+    ShowToastWithMessag("Invalid username or email and password!")
     return false;
 }
 
@@ -52,5 +53,13 @@ function StoreDetailsOfUserInSessionStorage(id){
 }
 
 function GetUsername(){
-    return (JSON.parse(sessionStorage.getItem("UserData")).username);
+    return JSON.parse(sessionStorage.getItem("UserData")).username;
+}
+
+function PutValidationThatComeFromLoginPage(){
+    sessionStorage.setItem("validate",true);
+}
+
+function RemoveValidationFormSession(){
+    sessionStorage.removeItem("validate");
 }

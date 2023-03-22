@@ -13,6 +13,7 @@ $(document).ready(() => {
         if(ValidateLogin(data) && ValidateUser(data)){
             SetDataInSessionStorage(data);
             StoreDetailsOfUserInSessionStorage(data.id);
+            PutValidationThatComeFromLoginPage();
             location.href = 'home.html';
         }
     })
@@ -28,6 +29,7 @@ $(document).ready(() => {
         }
     })
 
+    //toast setting 
     $(".toast > div > button").click(() => {
         $('.toast').removeClass('show');
     })
