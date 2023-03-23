@@ -41,11 +41,11 @@ body {
     margin-bottom: 20px;
 }
 
-form {
+#main-section form {
     font-size: 20px;
 }
 
-.form-group {
+#main-section .form-group {
     margin-bottom: 10px;
 }
 
@@ -61,3 +61,28 @@ form {
     display: none !important;
 }
 
+#UploadImage {
+    position: relative;
+    left: -20%;
+    top: 20%;
+    background-color: white;
+    width: 35px !important;
+    height: 35px;
+    border-radius: 50%;
+    padding: 5px;
+    border: 2px solid #198754;
+}
+
+#upload-image-section {
+    width: 400px;
+    background-color: #23d16b;
+}
+
+.image-section .head {
+    font-size: 20px;
+    margin-left: 25px;
+}
+
+#changeImage {
+    
+}
