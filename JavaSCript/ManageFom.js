@@ -1,5 +1,9 @@
 $(document).ready(() => {
+    ShowLogin();
     ClearFrom();
+    if(JSON.parse(sessionStorage.getItem("USER")) != null || JSON.parse(sessionStorage.getItem("USER")) != undefined){
+        FillLoginForm();
+    }
     //Changing between forms
     $("#login-change").click(() => ShowSignIn());
     $("#sign-change").click(() => ShowLogin());
@@ -11,7 +15,9 @@ $(document).ready(() => {
         const data = TakeDataFromLoginIn();
         //console.log(data);
         if(ValidateLogin(data) && ValidateUser(data)){
-            SetDataInSessionStorage(data);
+            if(data.remember == true){
+                SetDataInSessionStorage(data);
+            }
             StoreDetailsOfUserInSessionStorage(data.id);
             PutValidationThatComeFromLoginPage();
             location.href = 'home.html';
@@ -49,6 +55,7 @@ function ShowLogin() {
     $('.toast').removeClass('show');
     $(".needs-validation").removeClass("was-validated");
     ClearFrom();
+    
 }
 
 function ShowToastWithMessag(msg) {
@@ -123,7 +130,7 @@ function ValidateLogin(data){
         ShowToastWithMessag("Please fill data")
         return false;
     } else if(data.id == ""){
-        ShowToastWithMessag("Please enter username or email id for login");
+        ShowToastWithMessag("Please enter username or email id");
         return false;
     } else if(data.Password == ""){
         ShowToastWithMessag("Enter Password");
@@ -142,4 +149,10 @@ function ClearFrom() {
     LoginForm.Email.val(null);
     LoginForm.Password.val(null);
     $("#check").prop('checked',false);
+}
+
+function FillLoginForm(){
+    const data = JSON.parse(sessionStorage.getItem("USER"));
+    LoginForm.Email.val(data.id);
+    LoginForm.Password.val(data.Password);
 }

@@ -13,3 +13,51 @@ body {
 .heading {
     font-size: 30px;
 }
+
+#edit-profile-form {
+    /* display: none; */
+    display: flex;
+    flex-direction: column;
+    background-color: #23d16b;
+    width: 400px;
+    border-radius: 15px;
+    
+}
+
+#edit-profile-form input {
+    background-color: #75e6a4;
+    color: white;
+}
+
+#edit-profile-form input:focus {
+    background-color: #68ec9f;
+    color: white;
+    border: 2px solid #00ff6a;
+    box-shadow: none;
+}
+
+.header {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+form {
+    font-size: 20px;
+}
+
+.form-group {
+    margin-bottom: 10px;
+}
+
+.blur {
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+}
+
+.hide {
+    display: none !important;
+}
+

@@ -1,3 +1,8 @@
+<script>
+    if(sessionStorage.getItem("validate") == undefined){
+        location.href = "index.html"
+    }
+</script>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -29,7 +34,7 @@
         <script src="JavaSCript/Home.js" defer></script>
     </head>
     <body>
-        <div class="container-fluid row">
+        <div class="container-fluid row" id="main-section">
             <div class="heading text-center col-lg-6 col-md-12 d-flex
                 justify-content-center align-items-center flex-column">
                 <img class="mb-4 text-white border rounded-circle border-success
@@ -39,10 +44,10 @@
                     Hello Xyz!
                 </div>
                 <div>
-                    <button class="btn mt-2">
+                    <button class="btn mt-2" id="edit-profile">
                         <img src="Images/edit.png" alt="edit profile">
                     </button>
-                    <button class="btn mt-2">
+                    <button class="btn mt-2" id="logout">
                         <img src="Images/logout.png" alt="logout">
                     </button>
                 </div>
@@ -51,6 +56,49 @@
                 justify-content-center align-items-center">
                 <img class="mw-100" src="Images/Background.jpg" alt="image"
                     width="500px">
+            </div>
+        </div>
+
+        <div class="container-fluid hide text-white position-fixed top-50 start-50 translate-middle justify-content-center align-content-center " id="edit-profile-form">
+            <div class="header text-center">
+                Edit Profile Here
+            </div>
+            <form class="needs-validation" novalidate>
+                <div class="form-group">
+                    <label class="form-label mb-0" for="Username">Username :</label>
+                    <input class="form-control" type="text" id="Username" required>
+                    <div class="invalid-feedback">You can't leave Empty!</div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label mb-0" for="E-mail">Your Email :</label>
+                    <input class="form-control" type="email" id="E-mail" readonly>
+                </div>
+                <div class="form-group">
+                    <label class="form-label mb-0" for="Password">Password : <input class="ms-2" type="checkbox" name="editPass" id="editPass"><label class="form-label ms-2" for="editPass">Edit Password</label></label>
+                    <input class="form-control" type="password" required id="Password" readonly>
+                    <div class="invalid-feedback">You can't leave Empty!</div>
+                </div>
+                <div class="form-group">
+                    <label for="form-label">Gender :</label>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" id="radio1"
+                            name="gender" value="Male">
+                        <label class="form-check-label" for="radio1">Male</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" id="radio2"
+                            name="gender" value="Female">
+                        <label class="form-check-label" for="radio2">Female</label>
+                    </div>
+                </div>
+                <div class="form-group mb-3">
+                    <label class="form-label" for="BDdate">Birth Date:</label>
+                    <input class="form-control" type="date" name="BDdate" id="BDdate">
+                    <div class="invalid-feedback">You can't leave Empty!</div>
+                </div>
+            </form>
+            <div class="footer text-center m-3" id="update-data">
+                <button class="btn btn-success">Update Profile</button>
             </div>
         </div>
 
