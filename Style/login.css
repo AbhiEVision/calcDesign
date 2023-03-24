@@ -21,7 +21,6 @@ body {
     background-color: #23d16b;
     width: 400px;
     border-radius: 15px;
-    
 }
 
 #edit-profile-form input {
@@ -41,11 +40,11 @@ body {
     margin-bottom: 20px;
 }
 
-#main-section form {
+#edit-profile-form form {
     font-size: 20px;
 }
 
-#main-section .form-group {
+#edit-profile-form .form-group {
     margin-bottom: 10px;
 }
 
@@ -76,13 +75,10 @@ body {
 #upload-image-section {
     width: 400px;
     background-color: #23d16b;
+    border-radius: 15px;
 }
 
 .image-section .head {
     font-size: 20px;
     margin-left: 25px;
-}
-
-#changeImage {
-    
 }

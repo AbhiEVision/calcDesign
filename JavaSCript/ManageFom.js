@@ -17,6 +17,8 @@ $(document).ready(() => {
         if(ValidateLogin(data) && ValidateUser(data)){
             if(data.remember == true){
                 SetDataInSessionStorage(data);
+            } else {
+                sessionStorage.removeItem('USER');
             }
             StoreDetailsOfUserInSessionStorage(data.id);
             PutValidationThatComeFromLoginPage();
